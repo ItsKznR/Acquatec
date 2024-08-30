@@ -1,0 +1,301 @@
+/* Container principal para centralizar o conteúdo */
+.controle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  position: relative;
+  padding: 1rem;
+}
+
+/* Estilo do contêiner do controlador de pressão */
+.pressure-controller {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Estilo do título do controlador de pressão */
+.pressure-controller h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  color: #1976D2;
+  text-align: center; /* Justifica o título ao centro */
+}
+
+/* Estilo dos botões de controle */
+.control-button {
+  font-size: 5rem;
+  padding: 1.5rem 3rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 1rem;
+  color: #fff;
+  display: inline-block;
+}
+
+/* Estilo do botão quando está desligado */
+.control-button.off {
+  background-color: #f44336;
+}
+
+/* Estilo do botão quando está ligado */
+.control-button.on {
+  background-color: #4caf50;
+}
+
+/* Estilo do contêiner do controlador */
+.controller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Estilo do manômetro de pressão */
+.pressure-gauge {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+/* Estilo do círculo do manômetro */
+.gauge-circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 100% 100% 0 0;
+  background: #ddd;
+  border: 5px solid #2196F3;
+  top: 0;
+  left: 0;
+  clip-path: inset(-50% 0 0 0);
+}
+
+/* Estilo da agulha do manômetro */
+.gauge-needle {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: #2196F3;
+  top: 0;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: rotate(-90deg);
+}
+
+/* Estilo do centro do manômetro */
+.gauge-center {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #2196F3;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Estilo do valor da pressão */
+.pressure-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 1rem;
+}
+
+/* Estilo do controle deslizante de faixa */
+.range-slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 15px;
+  border-radius: 10px;
+  background: #ddd;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .15s ease-in-out;
+}
+
+/* Estilo do controle deslizante de faixa ao passar o mouse */
+.range-slider:hover {
+  opacity: 1;
+}
+
+/* Estilo do polegar do controle deslizante de faixa para WebKit */
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #2196F3;
+  cursor: pointer;
+}
+
+/* Estilo do polegar do controle deslizante de faixa para Mozilla */
+.range-slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #2196F3;
+  cursor: pointer;
+}
+
+/* Estilo do botão de voltar */
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 3rem;
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo do ícone do botão de voltar */
+.back-button-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Estilo do SVG dentro do ícone do botão de voltar */
+.back-button-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: #333;
+}
+
+/* Efeito de hover para o ícone do botão de voltar */
+.back-button:hover .back-button-icon svg {
+  fill: #007bff;
+}
+
+/* Estilo do indicador de porcentagem */
+.percentage-indicator {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Estilo da barra de porcentagem */
+.percentage-bar {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+/* Estilo do preenchimento da barra de porcentagem */
+.percentage-fill {
+  height: 100%;
+  background: #2196F3;
+  border-radius: 10px;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Media queries para telas menores */
+@media (max-width: 768px) {
+  .control-button {
+    font-size: 4rem; /* Aumenta o tamanho dos botões no mobile */
+    padding: 1rem 2rem;
+  }
+
+  .pressure-controller h2 {
+    font-size: 2.5rem;
+  }
+
+  .pressure-gauge {
+    width: 180px; /* Ajusta o tamanho do manômetro para ser mais proporcional */
+    height: 90px;
+    margin-bottom: 1.5rem;
+  }
+
+  .gauge-circle {
+    width: 180px; /* Ajusta o tamanho do círculo do manômetro */
+    height: 180px;
+  }
+
+  .range-slider {
+    height: 12px;
+  }
+
+  .range-slider::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+  }
+
+  .range-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+  }
+
+  .back-button {
+    font-size: 2.5rem;
+  }
+
+  .back-button-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .control-button {
+    font-size: 3rem; /* Ajusta o tamanho dos botões para telas muito pequenas */
+    padding: 0.75rem 1.5rem;
+  }
+
+  .pressure-controller h2 {
+    font-size: 2rem;
+  }
+
+  .pressure-gauge {
+    width: 150px; /* Ajusta o tamanho do manômetro para telas muito pequenas */
+    height: 75px;
+    margin-bottom: 1rem;
+  }
+
+  .gauge-circle {
+    width: 150px; /* Ajusta o tamanho do círculo do manômetro */
+    height: 150px;
+  }
+
+  .range-slider {
+    height: 10px;
+  }
+
+  .range-slider::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+  }
+
+  .range-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+  }
+
+  .back-button {
+    font-size: 2rem;
+  }
+
+  .back-button-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
