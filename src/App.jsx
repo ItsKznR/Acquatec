@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import './index.css'; 
-import fundoImg from './assets/fundo.jpg';
-
+import './index.css';
 
 function App() {
   const bubbleContainerRef = useRef(null);
@@ -36,7 +34,7 @@ function App() {
   return (
     <div
       className="h-screen w-screen bg-cover bg-center flex items-center justify-center relative"
-      style={{ backgroundImage: `url(${fundoImg})` }}
+      style={{ backgroundImage: `url(https://i.im.ge/2024/08/30/fCCKsp.fundo.jpeg)` }}
     >
       <div className="bubble-container" ref={bubbleContainerRef} />
       <Link
